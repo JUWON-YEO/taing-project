@@ -1,0 +1,155 @@
+@use "./style/abstracts/variables" as var;
+@use "./style/abstracts/mixins" as mix;
+
+body {
+  background-color: #000;
+  color: white;
+}
+
+.ldMain {
+  &__Header {
+    @include mix.paddingX(1rem);
+    @include mix.paddingY(0.75rem);
+    @include mix.inline-size(100%);
+    position: absolute;
+    top: 0;
+
+    img {
+      @include mix.inline-size(2.875rem);
+    }
+  }
+
+  &__title {
+    @include mix.padding-block-start(8.125rem);
+    @include mix.padding-block-end(5rem);
+    background-image: image-set(url(/assets/backgorund_1x.webp) 1x, url(/assets/backgorund_2x.webp) 2x);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    text-align: center;
+
+    b {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    & > span {
+      @include mix.margin-block-start(0.625rem);
+      display: block;
+      font-size: 0.75rem;
+      color: var.$gray-400;
+      font-weight: var.$font-weight-400;
+      line-height: 1.5;
+    }
+  }
+  &__title--button {
+    @include mix.flexbox($items: center, $justify: center);
+    @include mix.padding-block-end(0.375rem);
+    @include mix.inline-size(11.875rem);
+    @include mix.radius(xs);
+    margin: 1rem auto 3.125rem auto;
+    font-size: 0.75rem;
+    background-color: var.$primary-color;
+
+    span {
+      @include mix.padding-block-start(0.375rem);
+      @include mix.padding-inline-start(0.375rem);
+      color: var.$white;
+    }
+  }
+  &__content {
+    @include mix.margin-block-start(3rem);
+    text-align: center;
+
+    h2 {
+      font-size: 1.375rem;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    p {
+      @include mix.padding-block-end(1.625rem);
+      font-size: 0.75rem;
+      color: var.$gray-200;
+      line-height: 1.5;
+    }
+
+    b {
+      @include mix.marginY(1.125rem);
+      display: block;
+    }
+  }
+  &__content__subLogo {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.ldMain__footer {
+  @include mix.marginY(3.25rem);
+  @include mix.marginX(1rem);
+  font-size: 0.75rem;
+  color: var.$gray-200;
+  line-height: 1.4;
+
+  &__info {
+    li {
+      @include mix.margin-block-end(0.25rem);
+    }
+  }
+  &__detail {
+    display: none;
+  }
+
+  &__social {
+    @include mix.marginY(1rem);
+    @include mix.flexbox($gap: 0.5rem);
+    img {
+      @include mix.inline-size(1.5rem);
+    }
+  }
+  &__copy {
+    font-size: 0.75rem;
+    color: var.$gray-500;
+  }
+}
+
+.slide-01 {
+  @include mix.inline-size(88%);
+
+  &:nth-child(1n) {
+    width: 80%;
+  }
+
+  img {
+    @include mix.radius(xs);
+    width: 100%;
+  }
+}
+
+.slide-02 {
+  @include mix.inline-size(88%);
+
+  &:nth-child(1n) {
+    width: 50%;
+  }
+
+  img {
+    @include mix.radius(xs);
+    width: 100%;
+  }
+}
+
+.slide-03 {
+  @include mix.inline-size(88%);
+
+  &:nth-child(1n) {
+    width: 50%;
+  }
+
+  img {
+    @include mix.radius(xs);
+    width: 100%;
+  }
+}

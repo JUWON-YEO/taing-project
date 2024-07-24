@@ -1,0 +1,21 @@
+@use "./style/abstracts/variables" as var;
+@use "./style/abstracts/mixins" as mix;
+
+$base-font-family: "Pretendard Variable", sans-serif;
+
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $base-font-family;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* 숨김 콘텐츠 */
+.sr-only {
+  @include mix.a11yHidden;
+}
